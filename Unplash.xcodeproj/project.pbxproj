@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		225D53E5C67DA5A0FC4A6D60 /* Pods_Unplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1B9F04DD6E87A31C2F2C02 /* Pods_Unplash.framework */; };
 		FAAA8FE723C27FF300FB2851 /* NetworkManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FE623C27FF300FB2851 /* NetworkManagerConstants.swift */; };
+		FAAA8FEA23C2A7C100FB2851 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FE923C2A7C100FB2851 /* Extension+UIColor.swift */; };
+		FAAA8FED23C2A89B00FB2851 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FEC23C2A89B00FB2851 /* MainTabBarVC.swift */; };
 		FAD14FB323C24C8B0063EF0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14FB223C24C8B0063EF0A /* AppDelegate.swift */; };
 		FAD14FB523C24C8B0063EF0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14FB423C24C8B0063EF0A /* SceneDelegate.swift */; };
-		FAD14FB723C24C8B0063EF0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14FB623C24C8B0063EF0A /* ViewController.swift */; };
+		FAD14FB723C24C8B0063EF0A /* PhotoOfDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14FB623C24C8B0063EF0A /* PhotoOfDayViewController.swift */; };
 		FAD14FBA23C24C8B0063EF0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD14FB823C24C8B0063EF0A /* Main.storyboard */; };
 		FAD14FBC23C24C8D0063EF0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD14FBB23C24C8D0063EF0A /* Assets.xcassets */; };
 		FAD14FBF23C24C8D0063EF0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD14FBD23C24C8D0063EF0A /* LaunchScreen.storyboard */; };
@@ -24,10 +26,12 @@
 		E73623258AFBAE54CFEAC084 /* Pods-Unplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unplash.release.xcconfig"; path = "Target Support Files/Pods-Unplash/Pods-Unplash.release.xcconfig"; sourceTree = "<group>"; };
 		EA24797F4565D966E63EA1A7 /* Pods-Unplash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unplash.debug.xcconfig"; path = "Target Support Files/Pods-Unplash/Pods-Unplash.debug.xcconfig"; sourceTree = "<group>"; };
 		FAAA8FE623C27FF300FB2851 /* NetworkManagerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerConstants.swift; sourceTree = "<group>"; };
+		FAAA8FE923C2A7C100FB2851 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		FAAA8FEC23C2A89B00FB2851 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		FAD14FAF23C24C8B0063EF0A /* Unplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD14FB223C24C8B0063EF0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD14FB423C24C8B0063EF0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAD14FB623C24C8B0063EF0A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAD14FB623C24C8B0063EF0A /* PhotoOfDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfDayViewController.swift; sourceTree = "<group>"; };
 		FAD14FB923C24C8B0063EF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAD14FBB23C24C8D0063EF0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD14FBE23C24C8D0063EF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +76,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FAAA8FE823C2A76F00FB2851 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA8FE923C2A7C100FB2851 /* Extension+UIColor.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FAAA8FEB23C2A85200FB2851 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				FAAA8FEC23C2A89B00FB2851 /* MainTabBarVC.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
 		FAD14FA623C24C8B0063EF0A = {
 			isa = PBXGroup;
 			children = (
@@ -93,12 +113,14 @@
 		FAD14FB123C24C8B0063EF0A /* Unplash */ = {
 			isa = PBXGroup;
 			children = (
+				FAAA8FEB23C2A85200FB2851 /* MainVC */,
+				FAAA8FE823C2A76F00FB2851 /* Helpers */,
 				FA3C91A623C27EC800F352FC /* Model */,
 				FAD14FC923C27D9D0063EF0A /* Services */,
 				FAD14FC623C27C8A0063EF0A /* Constants */,
 				FAD14FB223C24C8B0063EF0A /* AppDelegate.swift */,
 				FAD14FB423C24C8B0063EF0A /* SceneDelegate.swift */,
-				FAD14FB623C24C8B0063EF0A /* ViewController.swift */,
+				FAD14FB623C24C8B0063EF0A /* PhotoOfDayViewController.swift */,
 				FAD14FB823C24C8B0063EF0A /* Main.storyboard */,
 				FAD14FBB23C24C8D0063EF0A /* Assets.xcassets */,
 				FAD14FBD23C24C8D0063EF0A /* LaunchScreen.storyboard */,
@@ -241,10 +263,12 @@
 			files = (
 				FAAA8FE723C27FF300FB2851 /* NetworkManagerConstants.swift in Sources */,
 				FAD14FC823C27CAE0063EF0A /* APIConstants.swift in Sources */,
-				FAD14FB723C24C8B0063EF0A /* ViewController.swift in Sources */,
+				FAAA8FEA23C2A7C100FB2851 /* Extension+UIColor.swift in Sources */,
+				FAD14FB723C24C8B0063EF0A /* PhotoOfDayViewController.swift in Sources */,
 				FAD14FB323C24C8B0063EF0A /* AppDelegate.swift in Sources */,
 				FAD14FCB23C27DBC0063EF0A /* PhotoManager.swift in Sources */,
 				FAD14FB523C24C8B0063EF0A /* SceneDelegate.swift in Sources */,
+				FAAA8FED23C2A89B00FB2851 /* MainTabBarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
