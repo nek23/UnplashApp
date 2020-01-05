@@ -3,19 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		225D53E5C67DA5A0FC4A6D60 /* Pods_Unplash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1B9F04DD6E87A31C2F2C02 /* Pods_Unplash.framework */; };
+		FAAA8FE723C27FF300FB2851 /* NetworkManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FE623C27FF300FB2851 /* NetworkManagerConstants.swift */; };
 		FAD14FB323C24C8B0063EF0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14FB223C24C8B0063EF0A /* AppDelegate.swift */; };
 		FAD14FB523C24C8B0063EF0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14FB423C24C8B0063EF0A /* SceneDelegate.swift */; };
 		FAD14FB723C24C8B0063EF0A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14FB623C24C8B0063EF0A /* ViewController.swift */; };
 		FAD14FBA23C24C8B0063EF0A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD14FB823C24C8B0063EF0A /* Main.storyboard */; };
 		FAD14FBC23C24C8D0063EF0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD14FBB23C24C8D0063EF0A /* Assets.xcassets */; };
 		FAD14FBF23C24C8D0063EF0A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAD14FBD23C24C8D0063EF0A /* LaunchScreen.storyboard */; };
+		FAD14FC823C27CAE0063EF0A /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14FC723C27CAE0063EF0A /* APIConstants.swift */; };
+		FAD14FCB23C27DBC0063EF0A /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD14FCA23C27DBC0063EF0A /* PhotoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F1B9F04DD6E87A31C2F2C02 /* Pods_Unplash.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Unplash.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E73623258AFBAE54CFEAC084 /* Pods-Unplash.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unplash.release.xcconfig"; path = "Target Support Files/Pods-Unplash/Pods-Unplash.release.xcconfig"; sourceTree = "<group>"; };
+		EA24797F4565D966E63EA1A7 /* Pods-Unplash.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Unplash.debug.xcconfig"; path = "Target Support Files/Pods-Unplash/Pods-Unplash.debug.xcconfig"; sourceTree = "<group>"; };
+		FAAA8FE623C27FF300FB2851 /* NetworkManagerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerConstants.swift; sourceTree = "<group>"; };
 		FAD14FAF23C24C8B0063EF0A /* Unplash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unplash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAD14FB223C24C8B0063EF0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAD14FB423C24C8B0063EF0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +32,8 @@
 		FAD14FBB23C24C8D0063EF0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAD14FBE23C24C8D0063EF0A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAD14FC023C24C8D0063EF0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAD14FC723C27CAE0063EF0A /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		FAD14FCA23C27DBC0063EF0A /* PhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				225D53E5C67DA5A0FC4A6D60 /* Pods_Unplash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67E94B3FC0C70A94C1A8E5D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EA24797F4565D966E63EA1A7 /* Pods-Unplash.debug.xcconfig */,
+				E73623258AFBAE54CFEAC084 /* Pods-Unplash.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AEEA54E3A0590C082B27FE27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8F1B9F04DD6E87A31C2F2C02 /* Pods_Unplash.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA3C91A623C27EC800F352FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FAD14FA623C24C8B0063EF0A = {
 			isa = PBXGroup;
 			children = (
 				FAD14FB123C24C8B0063EF0A /* Unplash */,
 				FAD14FB023C24C8B0063EF0A /* Products */,
+				67E94B3FC0C70A94C1A8E5D3 /* Pods */,
+				AEEA54E3A0590C082B27FE27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +93,9 @@
 		FAD14FB123C24C8B0063EF0A /* Unplash */ = {
 			isa = PBXGroup;
 			children = (
+				FA3C91A623C27EC800F352FC /* Model */,
+				FAD14FC923C27D9D0063EF0A /* Services */,
+				FAD14FC623C27C8A0063EF0A /* Constants */,
 				FAD14FB223C24C8B0063EF0A /* AppDelegate.swift */,
 				FAD14FB423C24C8B0063EF0A /* SceneDelegate.swift */,
 				FAD14FB623C24C8B0063EF0A /* ViewController.swift */,
@@ -67,6 +107,23 @@
 			path = Unplash;
 			sourceTree = "<group>";
 		};
+		FAD14FC623C27C8A0063EF0A /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FAD14FC723C27CAE0063EF0A /* APIConstants.swift */,
+				FAAA8FE623C27FF300FB2851 /* NetworkManagerConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		FAD14FC923C27D9D0063EF0A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FAD14FCA23C27DBC0063EF0A /* PhotoManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +131,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAD14FC323C24C8D0063EF0A /* Build configuration list for PBXNativeTarget "Unplash" */;
 			buildPhases = (
+				9A822C230CC4DED5F1E0F64B /* [CP] Check Pods Manifest.lock */,
 				FAD14FAB23C24C8B0063EF0A /* Sources */,
 				FAD14FAC23C24C8B0063EF0A /* Frameworks */,
 				FAD14FAD23C24C8B0063EF0A /* Resources */,
+				65FFC7CBA2A40FE7EB21F005 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,13 +192,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		65FFC7CBA2A40FE7EB21F005 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Unplash/Pods-Unplash-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Unplash/Pods-Unplash-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Unplash/Pods-Unplash-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A822C230CC4DED5F1E0F64B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Unplash-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FAD14FAB23C24C8B0063EF0A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAAA8FE723C27FF300FB2851 /* NetworkManagerConstants.swift in Sources */,
+				FAD14FC823C27CAE0063EF0A /* APIConstants.swift in Sources */,
 				FAD14FB723C24C8B0063EF0A /* ViewController.swift in Sources */,
 				FAD14FB323C24C8B0063EF0A /* AppDelegate.swift in Sources */,
+				FAD14FCB23C27DBC0063EF0A /* PhotoManager.swift in Sources */,
 				FAD14FB523C24C8B0063EF0A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +386,7 @@
 		};
 		FAD14FC423C24C8D0063EF0A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA24797F4565D966E63EA1A7 /* Pods-Unplash.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +405,7 @@
 		};
 		FAD14FC523C24C8D0063EF0A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E73623258AFBAE54CFEAC084 /* Pods-Unplash.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
