@@ -8,5 +8,6 @@ target 'Unplash' do
   # Pods for Unplash
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod 'Kingfisher'
 
 end

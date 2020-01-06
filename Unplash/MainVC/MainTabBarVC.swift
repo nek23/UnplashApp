@@ -13,7 +13,8 @@ class MainTabBarVC: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewControllers = [
-      generateNavigationController(rootViewController: PhotoOfDayViewController(), title: "Фото дня", image: #imageLiteral(resourceName: "photos"))
+      generateNavigationController(rootViewController: PhotoOfDayViewController(), title: "Фото дня", image: #imageLiteral(resourceName: "photos")),
+      generateNavigationController(rootViewController: SearchPhotosViewController(), title: "Найти фото", image: #imageLiteral(resourceName: "photos"))
     ]
   }
   
