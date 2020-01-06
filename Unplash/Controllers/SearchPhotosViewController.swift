@@ -12,12 +12,24 @@ import Kingfisher
 class SearchPhotosViewController: UITableViewController {
   
   var photos: [Photo] = []
+  var isSearchBarHidden = false
+  var collectionID: Int!
   private let searchController = UISearchController(searchResultsController: nil)
   
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTableView()
-    setupSearchBar()
+    guard isSearchBarHidden else { setupSearchBar(); return }
+    loadCollectionPhotos()
+  }
+  
+  private func loadCollectionPhotos() {
+    PhotoManager.shared.collection(id: collectionID, onSuccess: { (photos) in
+      self.photos = photos
+      self.tableView.reloadData()
+    }) { (error) in
+      print(error)
+    }
   }
   
   private func loadPhoto(query: String?) {

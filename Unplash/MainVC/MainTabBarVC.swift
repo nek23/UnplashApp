@@ -14,7 +14,8 @@ class MainTabBarVC: UITabBarController {
     super.viewDidLoad()
     viewControllers = [
       generateNavigationController(rootViewController: PhotoOfDayViewController(), title: "Фото дня", image: #imageLiteral(resourceName: "photos")),
-      generateNavigationController(rootViewController: SearchPhotosViewController(), title: "Найти фото", image: #imageLiteral(resourceName: "photos"))
+      generateNavigationController(rootViewController: SearchPhotosViewController(), title: "Найти фото", image: #imageLiteral(resourceName: "photos")),
+      generateNavigationController(rootViewController: CollectionsTableViewController(), title: "Коллекции", image: #imageLiteral(resourceName: "photos")),
     ]
   }
   
