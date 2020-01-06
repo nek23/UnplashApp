@@ -29,10 +29,11 @@ class PhotoOfDayViewController: UIViewController {
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.clipsToBounds = true
     imageView.contentMode = .scaleAspectFill
-    imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
-    imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
+    imageView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0).isActive = true
+    imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
+    imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+    imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
     imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    imageView.heightAnchor.constraint(equalToConstant: 300).isActive = true
   }
   
   

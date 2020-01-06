@@ -16,6 +16,13 @@ class SearchPhotosViewController: UITableViewController {
   var collectionID: Int!
   private let searchController = UISearchController(searchResultsController: nil)
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    if !isSearchBarHidden {
+      navigationItem.searchController?.searchBar.becomeFirstResponder()
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTableView()
@@ -66,6 +73,16 @@ class SearchPhotosViewController: UITableViewController {
     cell.photoImageView.kf.indicatorType = .activity
     cell.photoImageView.kf.setImage(with: URL(string: photos[indexPath.row].urls[URLKind.regular.rawValue] ?? ""))
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let cell = tableView.cellForRow(at: indexPath) as? PhotoTableCell
+    let vc = DetailPhotoViewController()
+    vc.background = cell?.photoImageView.image?.averageColor
+    vc.imageURL = photos[indexPath.row].urls[URLKind.full.rawValue] ?? ""
+    vc.modalPresentationStyle = .fullScreen
+    vc.photo = photos[indexPath.row]
+    present(vc, animated: true, completion: nil)
   }
 }
 
