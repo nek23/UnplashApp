@@ -12,7 +12,7 @@
 		FAAA8FEA23C2A7C100FB2851 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FE923C2A7C100FB2851 /* Extension+UIColor.swift */; };
 		FAAA8FED23C2A89B00FB2851 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FEC23C2A89B00FB2851 /* MainTabBarVC.swift */; };
 		FAAA8FEF23C3673200FB2851 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FEE23C3673200FB2851 /* Photo.swift */; };
-		FAAA8FF223C36C4200FB2851 /* SearchPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FF123C36C4200FB2851 /* SearchPhotosViewController.swift */; };
+		FAAA8FF223C36C4200FB2851 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FF123C36C4200FB2851 /* PhotosViewController.swift */; };
 		FAAA8FF423C36EEA00FB2851 /* PhotoTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FF323C36EEA00FB2851 /* PhotoTableCell.swift */; };
 		FAAA8FF623C371F100FB2851 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FF523C371F100FB2851 /* Extension+UIImage.swift */; };
 		FAAA8FF823C3892C00FB2851 /* CollectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA8FF723C3892C00FB2851 /* CollectionsTableViewController.swift */; };
@@ -37,7 +37,7 @@
 		FAAA8FE923C2A7C100FB2851 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		FAAA8FEC23C2A89B00FB2851 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		FAAA8FEE23C3673200FB2851 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		FAAA8FF123C36C4200FB2851 /* SearchPhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotosViewController.swift; sourceTree = "<group>"; };
+		FAAA8FF123C36C4200FB2851 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 		FAAA8FF323C36EEA00FB2851 /* PhotoTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableCell.swift; sourceTree = "<group>"; };
 		FAAA8FF523C371F100FB2851 /* Extension+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		FAAA8FF723C3892C00FB2851 /* CollectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsTableViewController.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				FAD14FB623C24C8B0063EF0A /* PhotoOfDayViewController.swift */,
-				FAAA8FF123C36C4200FB2851 /* SearchPhotosViewController.swift */,
+				FAAA8FF123C36C4200FB2851 /* PhotosViewController.swift */,
 				FAAA8FF323C36EEA00FB2851 /* PhotoTableCell.swift */,
 				FAAA8FF723C3892C00FB2851 /* CollectionsTableViewController.swift */,
 				FAAA8FFB23C39A9300FB2851 /* DetailPhotoViewController.swift */,
@@ -294,7 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC20D4323C3C178002894D0 /* Extension+UIViewController.swift in Sources */,
-				FAAA8FF223C36C4200FB2851 /* SearchPhotosViewController.swift in Sources */,
+				FAAA8FF223C36C4200FB2851 /* PhotosViewController.swift in Sources */,
 				FAAA8FF823C3892C00FB2851 /* CollectionsTableViewController.swift in Sources */,
 				FAAA8FE723C27FF300FB2851 /* NetworkManagerConstants.swift in Sources */,
 				FAD14FC823C27CAE0063EF0A /* APIConstants.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  SearchPhotosViewController.swift
+//  PhotosViewController.swift
 //  Unplash
 //
 //  Created by Aleksei Kaliev on 06.01.2020.
@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class SearchPhotosViewController: UITableViewController {
+class PhotosViewController: UITableViewController {
   
   var photos: [Photo] = []
   var isSearchBarHidden = false
@@ -17,13 +17,6 @@ class SearchPhotosViewController: UITableViewController {
   var pageCount = 1
   var currentQuery = ""
   private let searchController = UISearchController(searchResultsController: nil)
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    if !isSearchBarHidden {
-      navigationItem.searchController?.searchBar.becomeFirstResponder()
-    }
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -101,7 +94,7 @@ class SearchPhotosViewController: UITableViewController {
   }
 }
 
-extension SearchPhotosViewController: UISearchBarDelegate {
+extension PhotosViewController: UISearchBarDelegate {
   func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
     guard currentQuery != searchBar.text ?? "" else { return }
     resetSearch()

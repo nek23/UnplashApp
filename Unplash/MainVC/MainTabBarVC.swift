@@ -13,9 +13,9 @@ class MainTabBarVC: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
     viewControllers = [
-      generateNavigationController(rootViewController: PhotoOfDayViewController(), title: "Фото дня", image: #imageLiteral(resourceName: "photos")),
-      generateNavigationController(rootViewController: SearchPhotosViewController(), title: "Найти фото", image: #imageLiteral(resourceName: "photos")),
-      generateNavigationController(rootViewController: CollectionsTableViewController(), title: "Коллекции", image: #imageLiteral(resourceName: "photos")),
+      generateNavigationController(rootViewController: PhotoOfDayViewController(), title: "Фото дня", image: #imageLiteral(resourceName: "dailyPhotoTab")),
+      generateNavigationController(rootViewController: PhotosViewController(), title: "Найти фото", image: #imageLiteral(resourceName: "searchTab")),
+      generateNavigationController(rootViewController: CollectionsTableViewController(), title: "Коллекции", image: #imageLiteral(resourceName: "collectionsTab")),
     ]
   }
   

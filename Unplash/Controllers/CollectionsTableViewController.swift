@@ -47,7 +47,7 @@ class CollectionsTableViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let vc = SearchPhotosViewController()
+    let vc = PhotosViewController()
     vc.isSearchBarHidden = true
     vc.title = collections[indexPath.row].title
     vc.collectionID = collections[indexPath.row].id
