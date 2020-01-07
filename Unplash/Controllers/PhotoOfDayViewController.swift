@@ -17,7 +17,6 @@ class PhotoOfDayViewController: UIViewController {
     
     PhotoManager.shared.getPhotoOfDay(onSuccess: { (image) in
       self.imageView = UIImageView(image: image)
-      self.view.backgroundColor = image.averageColor
       self.setupImage()
     }) { (error) in
       print(error)
@@ -33,7 +32,6 @@ class PhotoOfDayViewController: UIViewController {
     imageView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0).isActive = true
     imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
     imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-    imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
   }
   
   

@@ -12,6 +12,7 @@ import Kingfisher
 class CollectionsTableViewController: UITableViewController {
   
   var collections: [Collection] = []
+  var pageCount: Int = 1
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,8 +20,8 @@ class CollectionsTableViewController: UITableViewController {
   }
   
   private func loadCollections() {
-    PhotoManager.shared.collections(onSuccess: { (collections) in
-      self.collections = collections
+    PhotoManager.shared.collections(page: pageCount, onSuccess: { (collections) in
+      self.collections.append(contentsOf: collections)
       self.tableView.reloadData()
     }) { (error) in
       print(error)
@@ -36,6 +37,13 @@ class CollectionsTableViewController: UITableViewController {
     let cell = UITableViewCell(style: .default, reuseIdentifier: "CollectionCell")
     cell.textLabel?.text = collections[indexPath.row].title
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    if indexPath.item == collections.count - 1 {
+      pageCount += 1
+      loadCollections()
+    }
   }
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

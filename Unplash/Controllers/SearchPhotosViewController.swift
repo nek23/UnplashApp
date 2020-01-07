@@ -14,6 +14,8 @@ class SearchPhotosViewController: UITableViewController {
   var photos: [Photo] = []
   var isSearchBarHidden = false
   var collectionID: Int!
+  var pageCount = 1
+  var currentQuery = ""
   private let searchController = UISearchController(searchResultsController: nil)
   
   override func viewDidAppear(_ animated: Bool) {
@@ -31,22 +33,28 @@ class SearchPhotosViewController: UITableViewController {
   }
   
   private func loadCollectionPhotos() {
-    PhotoManager.shared.collection(id: collectionID, onSuccess: { (photos) in
-      self.photos = photos
+    PhotoManager.shared.collection(page: pageCount, id: collectionID, onSuccess: { (photos) in
+      self.photos.append(contentsOf: photos)
       self.tableView.reloadData()
     }) { (error) in
-      print(error)
+      self.showAlertError(error)
     }
   }
   
   private func loadPhoto(query: String?) {
     guard let query = query, query != "" else { return }
-    PhotoManager.shared.searchPhotos(query: query, onSuccess: { (searchResults) in
-      self.photos = searchResults.results
+    PhotoManager.shared.searchPhotos(page: pageCount, query: query, onSuccess: { (searchResults) in
+      self.photos.append(contentsOf: searchResults.results)
       self.tableView.reloadData()
     }) { (error) in
-      print(error)
+      self.showAlertError(error)
     }
+  }
+  
+  private func resetSearch() {
+    photos.removeAll()
+    pageCount = 1
+    tableView.reloadData()
   }
   
   private func setupSearchBar() {
@@ -65,6 +73,13 @@ class SearchPhotosViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return photos.count
+  }
+  
+  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    if indexPath.item == photos.count - 1 {
+      pageCount += 1
+      isSearchBarHidden ? loadCollectionPhotos() : loadPhoto(query: currentQuery)
+    }
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,6 +103,17 @@ class SearchPhotosViewController: UITableViewController {
 
 extension SearchPhotosViewController: UISearchBarDelegate {
   func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+    guard currentQuery != searchBar.text ?? "" else { return }
+    resetSearch()
+    currentQuery = searchBar.text ?? ""
     loadPhoto(query: searchBar.text)
+  }
+  
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    resetSearch()
+  }
+  
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    if searchText == "" { resetSearch() }
   }
 }

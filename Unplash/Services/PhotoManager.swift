@@ -6,9 +6,9 @@ class PhotoManager {
   
   static let shared = PhotoManager()
   
-  func collections(onSuccess: @escaping([Collection]) -> Void, onFailure: @escaping(String) -> Void) {
+  func collections(page: Int, onSuccess: @escaping([Collection]) -> Void, onFailure: @escaping(String) -> Void) {
     guard let url = URL(string: APIConstants.collections) else { return }
-    let parameters: [String: Any] = ["client_id": APIConstants.accessKey]
+    let parameters: [String: Any] = ["client_id": APIConstants.accessKey, "page": page]
     Alamofire.request(
       url,
       method: .get,
@@ -37,9 +37,9 @@ class PhotoManager {
     }
   }
   
-  func collection(id: Int, onSuccess: @escaping([Photo]) -> Void, onFailure: @escaping(String) -> Void) {
+  func collection(page: Int, id: Int, onSuccess: @escaping([Photo]) -> Void, onFailure: @escaping(String) -> Void) {
     guard let url = URL(string: APIConstants.collection(id: id)) else { return }
-    let parameters: [String: Any] = ["client_id": APIConstants.accessKey]
+    let parameters: [String: Any] = ["client_id": APIConstants.accessKey, "page": page]
     Alamofire.request(
       url,
       method: .get,
@@ -68,9 +68,9 @@ class PhotoManager {
     }
   }
   
-  func searchPhotos(query: String, onSuccess: @escaping(SearchResults) -> Void, onFailure: @escaping(String) -> Void) {
+  func searchPhotos(page: Int, query: String, onSuccess: @escaping(SearchResults) -> Void, onFailure: @escaping(String) -> Void) {
     guard let url = URL(string: APIConstants.searchPhotos) else { return }
-    let parameters: [String: Any] = ["client_id": APIConstants.accessKey, "query": query]
+    let parameters: [String: Any] = ["client_id": APIConstants.accessKey, "query": query, "page": page]
     Alamofire.request(
       url,
       method: .get,
@@ -93,7 +93,6 @@ class PhotoManager {
             }
           }
         case .failure(let error):
-          print("error")
           onFailure(error.localizedDescription)
         }
     }
