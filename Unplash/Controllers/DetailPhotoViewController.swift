@@ -4,8 +4,7 @@ import Kingfisher
 class DetailPhotoViewController: UIViewController {
   
   var photo: Photo!
-  
-  var background: UIColor!
+  var backgroundAverageColor: UIColor!
   
   var imageURL: String! {
     didSet {
@@ -22,16 +21,9 @@ class DetailPhotoViewController: UIViewController {
     return imageView
   }()
   
-  private let infoBackgroundView: UIView = {
-    let view = UIView()
-    view.backgroundColor = .white
-    view.alpha = 0.7
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
-  }()
-  
   private let infoView: UIStackView = {
     let stackView = UIStackView()
+    stackView.overrideUserInterfaceStyle = .light
     stackView.translatesAutoresizingMaskIntoConstraints = false
     stackView.alignment = .fill
     stackView.axis = .vertical
@@ -84,10 +76,10 @@ class DetailPhotoViewController: UIViewController {
   
   @objc func saveImageButtonTapped() {
     guard let image = imageView.image else { return }
-    UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImageInGallery), nil)
   }
   
-  @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+  @objc func saveImageInGallery(error: Error?) {
     if let error = error {
       showAlertError(error.localizedDescription)
     } else {
@@ -120,7 +112,7 @@ class DetailPhotoViewController: UIViewController {
   private func setupView() {
     let tap = UITapGestureRecognizer(target: self, action: Selector(("viewTapped")))
     view.addGestureRecognizer(tap)
-    self.view.backgroundColor = background
+    self.view.backgroundColor = backgroundAverageColor
   }
   
   @objc func viewTapped() {

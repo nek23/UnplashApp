@@ -21,6 +21,7 @@ class PhotosViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupTableView()
+    // If isSeatchBarHidden is true show search bar, else load collection's photos
     guard isSearchBarHidden else { setupSearchBar(); return }
     loadCollectionPhotos()
   }
@@ -34,7 +35,7 @@ class PhotosViewController: UITableViewController {
     }
   }
   
-  private func loadPhoto(query: String?) {
+  private func loadPhotosBySearch(query: String?) {
     guard let query = query, query != "" else { return }
     PhotoManager.shared.searchPhotos(page: pageCount, query: query, onSuccess: { (searchResults) in
       self.photos.append(contentsOf: searchResults.results)
@@ -45,6 +46,7 @@ class PhotosViewController: UITableViewController {
   }
   
   private func resetSearch() {
+    // Nullify pageCount, remove all photos and reload table
     photos.removeAll()
     pageCount = 1
     tableView.reloadData()
@@ -59,6 +61,7 @@ class PhotosViewController: UITableViewController {
   }
   
   private func setupTableView() {
+    tableView.separatorStyle = .none
     tableView.register(PhotoTableCell.self, forCellReuseIdentifier: PhotoTableCell.reuseId)
     tableView.rowHeight = 250
   }
@@ -71,7 +74,8 @@ class PhotosViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     if indexPath.item == photos.count - 1 {
       pageCount += 1
-      isSearchBarHidden ? loadCollectionPhotos() : loadPhoto(query: currentQuery)
+      // Load collection's photos or search photos if isSearchBarHidden or not
+      isSearchBarHidden ? loadCollectionPhotos() : loadPhotosBySearch(query: currentQuery)
     }
   }
   
@@ -86,7 +90,7 @@ class PhotosViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let cell = tableView.cellForRow(at: indexPath) as? PhotoTableCell
     let vc = DetailPhotoViewController()
-    vc.background = cell?.photoImageView.image?.averageColor
+    vc.backgroundAverageColor = cell?.photoImageView.image?.averageColor
     vc.imageURL = photos[indexPath.row].urls[URLKind.full.rawValue] ?? ""
     vc.modalPresentationStyle = .fullScreen
     vc.photo = photos[indexPath.row]
@@ -99,7 +103,7 @@ extension PhotosViewController: UISearchBarDelegate {
     guard currentQuery != searchBar.text ?? "" else { return }
     resetSearch()
     currentQuery = searchBar.text ?? ""
-    loadPhoto(query: searchBar.text)
+    loadPhotosBySearch(query: searchBar.text)
   }
   
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
