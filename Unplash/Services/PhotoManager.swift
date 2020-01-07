@@ -1,6 +1,5 @@
 import Foundation
 import Alamofire
-import SwiftyJSON
 
 class PhotoManager {
   
@@ -16,10 +15,11 @@ class PhotoManager {
       encoding: URLEncoding.default,
       headers: nil).responseData { (response) in
         switch response.result {
-        case .success(let value):
+        case .success:
           if NetworkManagerConstants.failureCondition(for: response) {
-            let json = JSON(value)
-            onFailure(json.description)
+            guard let data = response.data else { return }
+            guard let error = String(data: data, encoding: .utf8) else { return }
+            onFailure(error)
           } else {
             do {
               let json = response.data
@@ -31,7 +31,6 @@ class PhotoManager {
             }
           }
         case .failure(let error):
-          print("error")
           onFailure(error.localizedDescription)
         }
     }
@@ -47,10 +46,11 @@ class PhotoManager {
       encoding: URLEncoding.default,
       headers: nil).responseData { (response) in
         switch response.result {
-        case .success(let value):
+        case .success:
           if NetworkManagerConstants.failureCondition(for: response) {
-            let json = JSON(value)
-            onFailure(json.description)
+            guard let data = response.data else { return }
+            guard let error = String(data: data, encoding: .utf8) else { return }
+            onFailure(error)
           } else {
             do {
               let json = response.data
@@ -62,7 +62,6 @@ class PhotoManager {
             }
           }
         case .failure(let error):
-          print("error")
           onFailure(error.localizedDescription)
         }
     }
@@ -78,10 +77,11 @@ class PhotoManager {
       encoding: URLEncoding.default,
       headers: nil).responseData { (response) in
         switch response.result {
-        case .success(let value):
+        case .success:
           if NetworkManagerConstants.failureCondition(for: response) {
-            let json = JSON(value)
-            onFailure(json.description)
+            guard let data = response.data else { return }
+            guard let error = String(data: data, encoding: .utf8) else { return }
+            onFailure(error)
           } else {
             do {
               let json = response.data
@@ -107,17 +107,17 @@ class PhotoManager {
       encoding: URLEncoding.default,
       headers: nil).responseData { (response) in
         switch response.result {
-        case .success(let value):
+        case .success:
           if NetworkManagerConstants.failureCondition(for: response) {
-            let json = JSON(value)
-            onFailure(json.description)
+            guard let data = response.data else { return }
+            guard let error = String(data: data, encoding: .utf8) else { return }
+            onFailure(error)
           } else {
             guard let data = response.data else { return }
             guard let image = UIImage(data: data) else { return }
             onSuccess(image)
           }
         case .failure(let error):
-          print("error")
           onFailure(error.localizedDescription)
         }
     }

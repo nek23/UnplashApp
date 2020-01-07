@@ -24,7 +24,7 @@ class CollectionsTableViewController: UITableViewController {
       self.collections.append(contentsOf: collections)
       self.tableView.reloadData()
     }) { (error) in
-      print(error)
+      self.showAlertError(error)
     }
   }
   

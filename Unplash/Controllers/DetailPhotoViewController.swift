@@ -40,7 +40,7 @@ class DetailPhotoViewController: UIViewController {
   }()
   
   private let toolBar: UIToolbar = {
-    let toolbar = UIToolbar()
+    let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 400, height: 44))
     var items = [UIBarButtonItem]()
     items.append(
       UIBarButtonItem(barButtonSystemItem: .save, target: nil, action: #selector(saveImageButtonTapped))
@@ -80,7 +80,6 @@ class DetailPhotoViewController: UIViewController {
     imageView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
     imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
     imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
-    imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
   }
   
   @objc func saveImageButtonTapped() {
@@ -122,14 +121,6 @@ class DetailPhotoViewController: UIViewController {
     let tap = UITapGestureRecognizer(target: self, action: Selector(("viewTapped")))
     view.addGestureRecognizer(tap)
     self.view.backgroundColor = background
-  }
-  
-  private func setupToolbar() {
-    let guide = self.view.safeAreaLayoutGuide
-    toolBar.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-    toolBar.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-    toolBar.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-    toolBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
   }
   
   @objc func viewTapped() {

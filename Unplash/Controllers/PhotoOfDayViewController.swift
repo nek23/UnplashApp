@@ -19,7 +19,7 @@ class PhotoOfDayViewController: UIViewController {
       self.imageView = UIImageView(image: image)
       self.setupImage()
     }) { (error) in
-      print(error)
+      self.showAlertError(error)
     }
   }
   
@@ -33,6 +33,4 @@ class PhotoOfDayViewController: UIViewController {
     imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
     imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
   }
-  
-  
 }

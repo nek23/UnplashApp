@@ -7,7 +7,7 @@ target 'Unplash' do
 
   # Pods for Unplash
 pod 'Alamofire'
-pod 'SwiftyJSON'
 pod 'Kingfisher'
+pod 'ImageSlideshow/Alamofire'
 
 end
