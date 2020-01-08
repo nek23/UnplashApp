@@ -76,10 +76,10 @@ class DetailPhotoViewController: UIViewController {
   
   @objc func saveImageButtonTapped() {
     guard let image = imageView.image else { return }
-    UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveImageInGallery), nil)
+    UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
   }
   
-  @objc func saveImageInGallery(error: Error?) {
+  @objc func image(_ image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafeRawPointer) {
     if let error = error {
       showAlertError(error.localizedDescription)
     } else {
